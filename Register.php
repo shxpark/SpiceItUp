@@ -39,17 +39,7 @@ if(isset($_POST['email'])){
   // state pattern="^[a-zA-Z]+$"
   // zipcode pattern="^[0-9]{5}$" 
 
-$mail = new PHPMailer;
-$mail->setFrom('spicycustomerservice@gmail.com', 'Spice It Up');
-$mail->addAddress($email, $name);
-$mail->Subject  = "Thank you for joining Spice It Up, " . $name . "!";
-$mail->Body     = 'Welcome to Spice It Up. We value our customers - thank you for registering for an account with us. We will send any correspondences to this email. Feel free to contact us at spicycustomerservice@gmail.com if you have any questions regarding our products or an existing order.';
-if(!$mail->send()) {
-  echo 'Message was not sent.';
-  echo 'Mailer error: ' . $mail->ErrorInfo;
-} else {
-  echo 'Message has been sent.';
-}
+
 
 // Check connection
 if($link === false){
@@ -60,6 +50,18 @@ if($link === false){
 $result = mysqli_query($link, "SELECT Username FROM SpicyCustomers WHERE Username = '$username'");
 
 if(mysqli_num_rows($result) == 0) {
+
+  $mail = new PHPMailer;
+  $mail->setFrom('spicycustomerservice@gmail.com', 'Spice It Up');
+  $mail->addAddress($email, $name);
+  $mail->Subject  = "You've successfully joined Spice It Up, " . $name . "!";
+  $mail->Body     = "You've successfully signed up for an account! Your username is " . $username . ". We value our customers - thank you for registering for an account with us. We will send any correspondences to this email. Feel free to contact us at spicycustomerservice@gmail.com if you have any questions regarding our products or an existing order.";
+  if(!$mail->send()) {
+    echo 'Message was not sent.';
+    echo 'Mailer error: ' . $mail->ErrorInfo;
+} else {
+  echo "You've successfully registered for an account. You will receive an email confirmation shortly.";
+}
 
   $sql = "INSERT INTO SpicyCustomers (Name, Email, Address, City, State, Zipcode, Username, PasswordHash) VALUES ('$name', '$email', '$address', '$city', '$state', '$zipCode', '$username', '$pwhash')";
 
