@@ -9,6 +9,13 @@ http://www.templatemo.com/preview/templatemo_385_floral_shop
  <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require '/Applications/XAMPP/xamppfiles/htdocs/spiceitup/phpmailer/src/PHPMailer.php';
+require '/Applications/XAMPP/xamppfiles/htdocs/spiceitup/phpmailer/src/SMTP.php';
+require '/Applications/XAMPP/xamppfiles/htdocs/spiceitup/phpmailer/src/Exception.php';
+
 $link = mysqli_connect("localhost", "root", "", "SpiceItUp");
 
 # print_r($_POST);
@@ -31,6 +38,18 @@ if(isset($_POST['email'])){
   // city pattern = "^[a-zA-Z]+$"
   // state pattern="^[a-zA-Z]+$"
   // zipcode pattern="^[0-9]{5}$" 
+
+$mail = new PHPMailer;
+$mail->setFrom('spicycustomerservice@gmail.com', 'Spice It Up');
+$mail->addAddress($email, $name);
+$mail->Subject  = "Thank you for joining Spice It Up, " . $name . "!";
+$mail->Body     = 'Welcome to Spice It Up. We value our customers - thank you for registering for an account with us. We will send any correspondences to this email. Feel free to contact us at spicycustomerservice@gmail.com if you have any questions regarding our products or an existing order.';
+if(!$mail->send()) {
+  echo 'Message was not sent.';
+  echo 'Mailer error: ' . $mail->ErrorInfo;
+} else {
+  echo 'Message has been sent.';
+}
 
 // Check connection
 if($link === false){
