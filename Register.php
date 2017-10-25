@@ -12,9 +12,9 @@ server with default setting (user 'root' with no password) */
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require '/Applications/XAMPP/xamppfiles/htdocs/spiceitup/phpmailer/src/PHPMailer.php';
-require '/Applications/XAMPP/xamppfiles/htdocs/spiceitup/phpmailer/src/SMTP.php';
-require '/Applications/XAMPP/xamppfiles/htdocs/spiceitup/phpmailer/src/Exception.php';
+require '/Applications/XAMPP/xamppfiles/htdocs/xamppfiles/phpmailer/src/PHPMailer.php';
+require '/Applications/XAMPP/xamppfiles/htdocs/xamppfiles/phpmailer/src/SMTP.php';
+require '/Applications/XAMPP/xamppfiles/htdocs/xamppfiles/phpmailer/src/Exception.php';
 
 $link = mysqli_connect("localhost", "root", "", "SpiceItUp");
 
