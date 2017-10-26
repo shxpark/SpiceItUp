@@ -12,9 +12,9 @@ server with default setting (user 'root' with no password) */
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require '/Applications/XAMPP/xamppfiles/htdocs/xamppfiles/phpmailer/src/PHPMailer.php';
-require '/Applications/XAMPP/xamppfiles/htdocs/xamppfiles/phpmailer/src/SMTP.php';
-require '/Applications/XAMPP/xamppfiles/htdocs/xamppfiles/phpmailer/src/Exception.php';
+require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/PHPMailer.php';
+require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/SMTP.php';
+require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/Exception.php';
 
 $link = mysqli_connect("localhost", "root", "", "SpiceItUp");
 
@@ -50,8 +50,17 @@ if($link === false){
 $result = mysqli_query($link, "SELECT Username FROM SpicyCustomers WHERE Username = '$username'");
 
 if(mysqli_num_rows($result) == 0) {
+$sql = "INSERT INTO SpicyCustomers (Name, Email, Address, City, State, Zipcode, Username, PasswordHash) VALUES ('$name', '$email', '$address', '$city', '$state', '$zipCode', '$username', '$pwhash')";
 
-  $mail = new PHPMailer;
+  $mail = new PHPMailer(true);
+  $mail->SMTPDebug = 2;
+  $mail->isSMTP();
+  $mail->Host = 'smtp1.gmail.com;smtp2.gmail.com';
+  $mail->SMTPAuth = true;
+  $mail->Username = 'spicycustomerservice@gmail.com';
+  $mail->Password = 'ecommerce';
+  $mail->SMTPSecure = 'tls';
+  $mail->Port = 587;
   $mail->setFrom('spicycustomerservice@gmail.com', 'Spice It Up');
   $mail->addAddress($email, $name);
   $mail->Subject  = "You've successfully joined Spice It Up, " . $name . "!";
@@ -63,7 +72,7 @@ if(mysqli_num_rows($result) == 0) {
   echo "You've successfully registered for an account. You will receive an email confirmation shortly.";
 }
 
-  $sql = "INSERT INTO SpicyCustomers (Name, Email, Address, City, State, Zipcode, Username, PasswordHash) VALUES ('$name', '$email', '$address', '$city', '$state', '$zipCode', '$username', '$pwhash')";
+  
 
   if(mysqli_query($link, $sql)){
   } else{
@@ -150,9 +159,12 @@ function clearText(field)
                   	</ul> -->
                 </li>
                 <li><a href="checkout.html">Checkout</a></li>
+
                 <!--<li><a href="contact.html">Contact</a></li> -->
                 <li><a href="Login.html">Log In</a></li>
                 <li><a href="Register.html" class="selected">Register</a></li>
+               <li><a href="contact.php">Contact Us</a></li>
+
               <!--  <li><a href="contact.html">Contact</a></li> -->
             </ul>
             <!--

@@ -8,6 +8,15 @@ http://www.templatemo.com/preview/templatemo_385_floral_shop
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
+
+use PHPMailer\PHPMailer\PHPMailer;
+
+use PHPMailer\PHPMailer\Exception;
+
+require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/PHPMailer.php';
+require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/SMTP.php';
+require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/Exception.php';
+
 $link = mysqli_connect("localhost", "root", "", "SpiceItUp");
 
 # print_r($_POST);
@@ -15,10 +24,31 @@ $link = mysqli_connect("localhost", "root", "", "SpiceItUp");
 $error ="";
 if(isset($_POST['email'])){
   
-  
   $name = $_POST['name'];
   $email = $_POST['email'];
   $phone = $_POST['phone'];
+  $message = $_POST['message'];
+
+  $mail = new PHPMailer;
+  $mail->SMTPDebug = 2;
+  $mail->isSMTP();
+  $mail->Host = 'smtp1.gmail.com;smtp2.gmail.com';
+  $mail->SMTPAuth = true;
+  $mail->Username = 'spicycustomerservice@gmail.com';
+  $mail->Password = 'ecommerce';
+  $mail->SMTPSecure = 'tls';
+  $mail->Port = 587;
+  $mail->setFrom($email, $name);
+  $mail->addAddress('spicycustomerservice@gmail.com', 'Spice It Up');
+  $mail->Subject  = "Customer service issue";
+  $mail->Body     = $message;
+  if(!$mail->send()) {
+    echo 'Message was not sent.';
+    echo 'Mailer error: ' . $mail->ErrorInfo;
+} else {
+  echo "You've successfully sent your message.";
+}
+
  // $address = $_POST['address'];
   //$city = $_POST['city'];
   //$state = $_POST['state'];
@@ -208,7 +238,7 @@ function clearText(field)
         </div>
         <div class="cleaner h40"></div>
         <div id="contact_form">
-           <form method="post" name="contact" action="#">
+           <form method="post" name="contact" action="contact.php">
            		<div class="col col13">
                 
                     <label for="name">Name:</label>
@@ -234,7 +264,7 @@ function clearText(field)
                     <label for="message">Message:</label> 
                	  	<textarea id="message" name="message" rows="0" cols="0" class="required"></textarea>
                     <div class="cleaner h10"></div>
-                    <input type="submit" class="submit_btn left" name="submit" id="submit" value="Send" />
+                    <input type="submit" class="btTxt submit" name="submit" id="submit" value="Send" />
                     <input type="reset" class="submit_btn submit_right" name="reset" id="reset" value="Reset" />
 				</div>
                 
