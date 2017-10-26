@@ -247,7 +247,7 @@ a.button {
 #contact_form form { margin: 0px; padding: 0px; }
 
 #contact_form form .input_field { 
-	background: #395015; 
+	background: #ffffff; 
 	border: 1px solid #5d7c29; 
 	width: 200px;
 	padding: 4px;
@@ -264,7 +264,7 @@ a.button {
 #contact_form form textarea { 
 	width: 400px; 
 	height: 120px; 
-	background: #395015; 
+	background: #ffffff; 
 	border: 1px solid #5d7c29; 
 	margin-bottom: 10px;
 	padding: 4px;

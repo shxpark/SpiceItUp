@@ -5,7 +5,6 @@ http://www.templatemo.com/preview/templatemo_385_floral_shop
 -->
 
 
-
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
@@ -60,6 +59,8 @@ if(mysqli_num_rows($result) == 0) {
 mysqli_close($link);
 ?> 
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -77,13 +78,11 @@ mysqli_close($link);
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/ddsmoothmenu.js">
 
-
 /***********************************************
 * Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
 * This notice MUST stay intact for legal use
 * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
 ***********************************************/
-$link = mysqli_connect("localhost", "root", "", "SpiceItUp");
 
 </script>
 
@@ -105,20 +104,21 @@ function clearText(field)
 
 </script>
 
+
 </head>
 
 <body>
 
 <div id="templatemo_wrapper_sp">
 <div id="templatemo_header_wsp">
-  <div id="templatemo_header" class="header_subpage">
-      <div id="site_title"><a href="#">Spice It Up</a></div>
+	<div id="templatemo_header" class="header_subpage">
+    	<div id="site_title"><a href="#">Spice It Up</a></div>
         <label> <font size="+2"><FONT FACE="courier">Spice up your life today!</FONT></font></label>
         <div id="templatemo_menu" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-              <li><a href="products.html">Products</a>
+           		<li><a href="products.html">Products</a>
                     <!--
                     <ul>
                         <li><a href="#subpage1">Sub Page One</a></li>
@@ -148,8 +148,8 @@ function clearText(field)
 </div> <!-- END of header wrapper -->
 <div id="templatemo_main_wrapper">
 <div id="templatemo_main">
-  <div id="sidebar" class="left">
-      <div class="sidebar_box"><span class="bottom"></span>
+	<div id="sidebar" class="left">
+    	<div class="sidebar_box"><span class="bottom"></span>
             <h3>Our Spices</h3>   
             <div class="content"> 
                 <ul class="sidebar_list">
@@ -175,17 +175,17 @@ function clearText(field)
     </div>
     
     <div id="content" class="right">
-    <h2>Contact</h2>
+		<h2>Contact</h2>
         <p>If you have any questions, conerns, or simply want to chat with us, please contact us using the information below! We love hearing from our spicy customers!</p>
         <div class="cleaner h20"></div>
         <div class="col col13">
             <h4>Mailing Address</h4>
-          <h6><strong>Office One</strong></h6>
+        	<h6><strong>Office One</strong></h6>
             8975 Spring Circle <br />
             Tysons, Virginia, 22182<br />
             <br /><br />
             
-      <strong>Phone:</strong> 703-628-9734<br />
+			<strong>Phone:</strong> 703-628-9734<br />
             <strong>Email:</strong> <a href="mailto:contact@spiceitup.com">contact@spiceitup.com</a> <br />
             
             <div class="cleaner h20"></div>
@@ -195,59 +195,55 @@ function clearText(field)
             Brooklyn, New York, 11201<br />
             <br /><br />
             
-      <strong>Phone:</strong> 347-458-6291<br />
-            <strong>Email:</strong> <a href="mailto:contact@spiceitup.com">contact@spiceitup.com</a> <br />
+			<strong>Phone:</strong> 347-458-6291<br />
+            <strong>Email:</strong> <a href="mailto:info@spiceitup.com">info@spiceitup.com</a> <br />
 
-<!-- Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow"><strong>CSS</strong></a> -->
-    </div>
+           <!-- Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow"><strong>CSS</strong></a> -->
+		</div>
         <div class="col col23 no_margin_right">
-          <div class="map_border">
+        	<div class="map_border">
                 <!--<iframe width="430" height="340" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Central+Park,+New+York,+NY,+USA&amp;aq=0&amp;sll=14.093957,1.318359&amp;sspn=69.699334,135.263672&amp;vpsrc=6&amp;ie=UTF8&amp;hq=Central+Park,+New+York,+NY,+USA&amp;ll=40.778265,-73.96988&amp;spn=0.033797,0.06403&amp;t=m&amp;output=embed"></iframe></div> -->
                 <iframe width="430" height="340" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.mustseenewyork.com/maps/brooklyn-attractions-map.gif"></iframe></div>
-      
+			
         </div>
         <div class="cleaner h40"></div>
         <div id="contact_form">
            <form method="post" name="contact" action="#">
-              <div class="col col13">
+           		<div class="col col13">
                 
-                    <label for="name">Name:</label> 
+                    <label for="name">Name:</label>
                     <input id="name" name="name" type="text" pattern="^[a-zA-Z]+$"  
-      required="" oninvalid="this.setCustomValidity('Please enter a valid name.')" onchange="try{setCustomValidity('')}catch(e){}" />
-                <!-- <input name="name" type="text" class="input_field" id="name" maxlength="40" /> -->
-                  
+      required="" oninvalid="this.setCustomValidity('Please enter a valid name')" onchange="try{setCustomValidity('')}catch(e){}" />
 
-     
+              		<!--<input name="name" type="text" class="input_field" id="name" maxlength="40" /> -->
+                	<div class="cleaner h10"></div>
+                    <label for="email">Email:</label>
+                    <input type="email"  required="" id="email" name = "email" required pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" oninvalid="this.setCustomValidity('Please enter a valid email')" onchange="try{setCustomValidity('')}catch(e){}" /> 
 
-      </div>
-                  <div class="cleaner h10"></div>
-                    <label for="email">Email:</label> 
-                   <input type="email"  required="" id="email" name = "email" required pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" oninvalid="this.setCustomValidity('Please enter a valid email')" onchange="try{setCustomValidity('')}catch(e){}" />
-               <!-- <input name="email" type="text" class="required input_field" id="email" maxlength="40" /> -->
-<div>
-                  <div class="cleaner h10"></div>
+          			<!--<input name="email" type="text" class="required input_field" id="email" maxlength="40" /> -->
+                	<div class="cleaner h10"></div>
                     <label for="phone">Phone:</label> 
-                     <input type="phone"  required="" id="phone" name = "phone" required pattern="^\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" oninvalid="this.setCustomValidity('Please enter a valid phone number')" onchange="try{setCustomValidity('')}catch(e){}" /> 
-             <!--<input name="phone" type="text" class="input_field" id="phone" maxlength="20" /> -->
-                  <div class="cleaner h10"></div>
-                  
+                    <input type="phone"  required="" id="phone" name = "phone" required pattern="^\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" oninvalid="this.setCustomValidity('Please enter a valid phone number')" onchange="try{setCustomValidity('')}catch(e){}" /> 
+        			<!--<input name="phone" type="text" class="input_field" id="phone" maxlength="20" /> -->
+                	<div class="cleaner h10"></div>
+                	
                 
-        </div>
+			 	</div>
                 
                 <div class="col col23 no_margin_right">
                     <label for="message">Message:</label> 
-                    <textarea id="message" name="message" rows="0" cols="0" class="required"></textarea>
+               	  	<textarea id="message" name="message" rows="0" cols="0" class="required"></textarea>
                     <div class="cleaner h10"></div>
                     <input type="submit" class="submit_btn left" name="submit" id="submit" value="Send" />
                     <input type="reset" class="submit_btn submit_right" name="reset" id="reset" value="Reset" />
-        </div>
+				</div>
                 
                 
             </form>
         </div>
         <div class="cleaner h40"></div>        
         <div class="blank_box">
-          <a href="#"><img src="images/free_shipping.jpg" alt="Free Shipping" /></a>
+        	<a href="#"><img src="images/free_shipping.jpg" alt="Free Shipping" /></a>
         </div>  
         <div class="cleaner"></div>  
     </div>
@@ -257,17 +253,18 @@ function clearText(field)
 
 <div id="templatemo_footer_wrapper">
 <div id="templatemo_footer">
-  <div class="footer_left">
+	<div class="footer_left">
          <a href="#"><img src="images/bitpay-straight.png" alt="BitPay" /></a>
  
     </div>
-  <div class="footer_right">
-    <!--<p><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="checkout.html">Checkout</a> | <a href="contact.html">Contact</a></p> -->
+	<div class="footer_right">
+		<!--<p><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="checkout.html">Checkout</a> | <a href="contact.html">Contact</a></p> -->
           <p>Copyright © 2017 <a href="#">Spice It Up</a></p>
-  </div>
+	</div>
     <div class="cleaner"></div>
 </div> <!-- END of footer -->
 </div> <!-- END of footer wrapper -->
 </div>
+
 </body>
 </html>
