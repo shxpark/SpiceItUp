@@ -7,7 +7,7 @@ http://www.templatemo.com/preview/templatemo_385_floral_shop
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Spice It Up - Register</title>
+<title>Spice It Up - Log In</title>
 
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -58,7 +58,19 @@ function clearText(field)
 <div id="templatemo_wrapper_sp">
 <div id="templatemo_header_wsp">
 	<div id="templatemo_header" class="header_subpage">
+<?php
+    if (isset($_COOKIE["name"]) && ($_COOKIE["name"] != "") && isset($_COOKIE["pass"]) && ($_COOKIE["pass"] == "true")) {
+        $name = $_COOKIE["name"];
+setcookie("name", "", time()-3600);
+setcookie("pass", "", time()-3600);
+unset($_COOKIE["name"]);
+unset($_COOKIE["pass"]);
+}
+?>
+
+
     	<div id="site_title"><a href="#">Spice It Up</a></div>
+      <label> <font size="+2"><FONT FACE="courier">Spice up your life today!</FONT></font></label>
         <div id="templatemo_menu" class="ddsmoothmenu">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -75,8 +87,8 @@ function clearText(field)
                 </li>
                 <li><a href="checkout.html">Checkout</a></li>
                 <!--<li><a href="contact.html">Contact</a></li> -->
-                <li><a href="Login.html">Log In</a></li>
-                <li><a href="Register.php" class="selected">Register</a></li>
+                <li><a href="Login.php" class="selected">Log In</a></li>
+                <li><a href="Register.php">Register</a></li>
               <!--  <li><a href="contact.html">Contact</a></li> -->
             </ul>
             <!--
@@ -95,66 +107,25 @@ function clearText(field)
 <center>
 <div class="container">
   <section id="content">
+    <form action="signin.php" method="POST">
+      <h1>You have successfully logged out!</h1>
+     
+  </br>
 
-<!--
-  <form method="post" action="process.php">
-<label>First Name</label>
-<input type="text" name="first_name" />
-<br />
-<label>Last Name</label>
-<input type="text" name="last_name" />
-<br />
-<label>Department</label>
-<input type="text" name="department" />
-<br />
-<label>Email</label>
-<input type="text" name="email" />
- 
-<br />
-<input type="submit" value="Add Employee">
-</form>
--->
- 
-    <form action="registrationSuccess.php" method="post">
-      <h1>Start buying your favorite spices!</h1>
-      <div>
-        <input type="email" placeholder="Email" required="" id="email" name = "email"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
-      </div>
-  </br>
-      <div>
-        <input type="text" placeholder="Username" required="" id="username" name="username"/>
-      </div>
-  </br>
-      <div>
-        <input type="password" placeholder="Password" required="" id="password" name="password" />
-      </div>
-  </br>
-      <div>
-        <input type="password" placeholder="Re-enter Password" required="" id="password" />
-      </div>
-  </br>
 
         <div>
       <!--  <input type="submit" value="Log in" /> -->
                 <div style="text-align: center" class="blank_box"> <span class="center"></span>
-            <!--<a href="Login.html"><img src="images/log_in.png" alt="about us" /></a> -->
         </div> 
 
       <div>
       <!--  <input type="submit" value="Sign in" /> -->
                 <div style="text-align: center" class="blank_box"> <span class="center"></span>
-            <a href="index.html">
-              <input type="image" src="images/sign_in.png" name="saveForm" class="btTxt submit" id="saveForm" />
-            </a>
-            <!--<a href="Register.html"><img src="images/sign_in.png" alt="about us"/></a> -->
         </div> 
 
-        <a href="#"><br />Lost your password?<br /></a>
        <!-- <a href="#">Register</a> -->
       </div>
     </form><!-- form -->
-    <div class="button">
-    </div><!-- button -->
   </section><!-- content -->
 </div><!-- container -->
 </center>

@@ -58,6 +58,18 @@ function clearText(field)
 <div id="templatemo_wrapper_sp">
 <div id="templatemo_header_wsp">
 	<div id="templatemo_header" class="header_subpage">
+<?php
+    if (isset($_COOKIE["name"]) && ($_COOKIE["name"] != "") && isset($_COOKIE["pass"]) && ($_COOKIE["pass"] == "true")) {
+?>
+<font face="courier" size="2" color="blue">You have logged in. Do you want to login again?</font><br/>
+<?php
+    }
+    else if (isset($_COOKIE["pass"]) && ($_COOKIE["pass"] == "false")) {
+?>
+<font face="courier" size="2" color="red">Please enter correct username and password!</font><br/>
+<?php
+    }
+?>
     	<div id="site_title"><a href="#">Spice It Up</a></div>
       <label> <font size="+2"><FONT FACE="courier">Spice up your life today!</FONT></font></label>
         <div id="templatemo_menu" class="ddsmoothmenu">
@@ -76,8 +88,10 @@ function clearText(field)
                 </li>
                 <li><a href="checkout.html">Checkout</a></li>
                 <!--<li><a href="contact.html">Contact</a></li> -->
-                <li><a href="Login.html" class="selected">Log In</a></li>
+                <li><a href="Login.php" class="selected">Log In</a></li>
                 <li><a href="Register.php">Register</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+
               <!--  <li><a href="contact.html">Contact</a></li> -->
             </ul>
             <!--
@@ -96,27 +110,28 @@ function clearText(field)
 <center>
 <div class="container">
   <section id="content">
-    <form action="">
+    <form action="signin.php" method="POST">
       <h1>Welcome Back!</h1>
       <div>
-        <input type="text" placeholder="Username" required="" id="username" />
+        <input type="text" placeholder="Username" required="" name="username" id="username" />
       </div>
   </br>
       <div>
-        <input type="password" placeholder="Password" required="" id="password" />
+        <input type="password" placeholder="Password" name="password" required="" id="password" />
       </div>
   </br>
 
+<button type="submit" name="submit" class="button">
+  <img src="images/log_in.png" />
+</button>
         <div>
       <!--  <input type="submit" value="Log in" /> -->
                 <div style="text-align: center" class="blank_box"> <span class="center"></span>
-            <a href="Login.html"><img src="images/log_in.png" alt="about us" /></a>
         </div> 
 
       <div>
       <!--  <input type="submit" value="Sign in" /> -->
                 <div style="text-align: center" class="blank_box"> <span class="center"></span>
-            <!--<a href="Login.html"><img src="images/sign_in.png" alt="about us" /></a> -->
         </div> 
 
         <a href="#"><br />Lost your password?<br /></a>

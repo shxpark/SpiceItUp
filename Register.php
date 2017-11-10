@@ -12,9 +12,11 @@ server with default setting (user 'root' with no password) */
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/PHPMailer.php';
-require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/SMTP.php';
-require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/Exception.php';
+
+require '/Applications/XAMPP/xamppfiles/htdocs/spiceitup/phpmailer/src/PHPMailer.php';
+require '/Applications/XAMPP/xamppfiles/htdocs/spiceitup/phpmailer/src/SMTP.php';
+require '/Applications/XAMPP/xamppfiles/htdocs/spiceitup/phpmailer/src/Exception.php';
+
 
 $link = mysqli_connect("localhost", "root", "", "SpiceItUp");
 
@@ -51,7 +53,7 @@ $result = mysqli_query($link, "SELECT Username FROM SpicyCustomers WHERE Usernam
 
 if(mysqli_num_rows($result) == 0) {
 $sql = "INSERT INTO SpicyCustomers (Name, Email, Address, City, State, Zipcode, Username, PasswordHash) VALUES ('$name', '$email', '$address', '$city', '$state', '$zipCode', '$username', '$pwhash')";
-
+/*
   $mail = new PHPMailer(true);
   $mail->SMTPDebug = 2;
   $mail->isSMTP();
@@ -71,7 +73,7 @@ $sql = "INSERT INTO SpicyCustomers (Name, Email, Address, City, State, Zipcode, 
 } else {
   echo "You've successfully registered for an account. You will receive an email confirmation shortly.";
 }
-
+*/
   
 
   if(mysqli_query($link, $sql)){
@@ -161,8 +163,8 @@ function clearText(field)
                 <li><a href="checkout.html">Checkout</a></li>
 
                 <!--<li><a href="contact.html">Contact</a></li> -->
-                <li><a href="Login.html">Log In</a></li>
-                <li><a href="Register.html" class="selected">Register</a></li>
+                <li><a href="Login.php">Log In</a></li>
+                <li><a href="Register.php" class="selected">Register</a></li>
                <li><a href="contact.php">Contact Us</a></li>
 
               <!--  <li><a href="contact.html">Contact</a></li> -->
@@ -235,7 +237,6 @@ function clearText(field)
         <div>
       <!--  <input type="submit" value="Log in" /> -->
                 <div style="text-align: center" class="blank_box"> <span class="center"></span>
-            <!--<a href="Login.html"><img src="images/log_in.png" alt="about us" /></a> -->
         </div> 
 
       <div>
