@@ -39,7 +39,7 @@ $login = false;
 if($login){
 
 }else{
-			setcookie("pass", "false");
+	setcookie("pass", "notfound");
 
 }
 

@@ -66,10 +66,16 @@ function clearText(field)
     }
     else if (isset($_COOKIE["pass"]) && ($_COOKIE["pass"] == "false")) {
 ?>
-<font face="courier" size="2" color="red">Please enter correct username and password!</font><br/>
+<font face="courier" size="2" color="red">Your password is incorrect. Please enter the correct password.</font><br/>
 <?php
-    }
+    }     else if (isset($_COOKIE["pass"]) && ($_COOKIE["pass"] == "notfound")) {
 ?>
+<font face="courier" size="2" color="red">No user with that username exists in our database.</font><br/>
+<?php
+}
+?>
+
+
     	<div id="site_title"><a href="#">Spice It Up</a></div>
       <label> <font size="+2"><FONT FACE="courier">Spice up your life today!</FONT></font></label>
         <div id="templatemo_menu" class="ddsmoothmenu">
