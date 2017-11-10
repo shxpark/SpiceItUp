@@ -65,10 +65,20 @@ function clearText(field)
 <?php
     }
     else if (isset($_COOKIE["pass"]) && ($_COOKIE["pass"] == "false")) {
+      setcookie("name", "", time()-3600);
+setcookie("pass", "", time()-3600);
+
+unset($_COOKIE["name"]);
+unset($_COOKIE["pass"]);
 ?>
 <font face="courier" size="2" color="red">Your password is incorrect. Please enter the correct password.</font><br/>
 <?php
     }     else if (isset($_COOKIE["pass"]) && ($_COOKIE["pass"] == "notfound")) {
+      setcookie("name", "", time()-3600);
+setcookie("pass", "", time()-3600);
+
+unset($_COOKIE["name"]);
+unset($_COOKIE["pass"]);
 ?>
 <font face="courier" size="2" color="red">No user with that username exists in our database.</font><br/>
 <?php
