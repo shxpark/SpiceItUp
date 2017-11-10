@@ -91,7 +91,6 @@ function clearText(field)
                 <li><a href="Login.php" class="selected">Log In</a></li>
                 <li><a href="Register.php">Register</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
-
               <!--  <li><a href="contact.html">Contact</a></li> -->
             </ul>
             <!--
