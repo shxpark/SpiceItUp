@@ -121,11 +121,11 @@ $link = mysqli_connect("localhost", "root", "", "SpiceItUp");
 <script type="text/javascript">
 
 ddsmoothmenu.init({
-  mainmenuid: "templatemo_menu", //menu DIV id
-  orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
-  classname: 'ddsmoothmenu', //class added to menu's outer DIV
-  //customtheme: ["#1c5a80", "#18374a"],
-  contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
 
 function clearText(field)
@@ -143,8 +143,8 @@ function clearText(field)
 
 <div id="templatemo_wrapper_sp">
 <div id="templatemo_header_wsp">
-  <div id="templatemo_header" class="header_subpage">
-      <div id="site_title"><a href="#">Spice It Up</a></div>
+	<div id="templatemo_header" class="header_subpage">
+    	<div id="site_title"><a href="#">Spice It Up</a></div>
       <label> <font size="+2"><FONT FACE="courier">Spice up your life today!</FONT></font></label>
         <div id="templatemo_menu" class="ddsmoothmenu">
             <ul>
@@ -158,7 +158,7 @@ function clearText(field)
                         <li><a href="#subpage3">Sub Page Three</a></li>
                         <li><a href="#subpage4">Sub Page Four</a></li>
                         <li><a href="#subpage5">Sub Page Five</a></li>
-                    </ul> -->
+                  	</ul> -->
                 </li>
                 <li><a href="checkout.html">Checkout</a></li>
 
@@ -172,9 +172,9 @@ function clearText(field)
             <!--
             <div id="templatemo_search">
                 <form action="#" method="get">
-                    <input type="text" value="Site Search" name="keyword" id="keyword" title="keyword" 
-                        onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-                    <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn" />
+                  	<input type="text" value="Site Search" name="keyword" id="keyword" title="keyword" 
+                  			onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+                  	<input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn" />
                 </form>
             </div> -->
             <br style="clear: left" />
@@ -272,22 +272,22 @@ function clearText(field)
 
 <div id="templatemo_footer_wrapper">
 <div id="templatemo_footer">
-  <div class="footer_left">
+	<div class="footer_left">
         <!--
-      <a href="#"><img src="images/1311260370_paypal-straight.png" alt="Paypal" /></a>
+    	<a href="#"><img src="images/1311260370_paypal-straight.png" alt="Paypal" /></a>
         <a href="#"><img src="images/1311260374_mastercard-straight.png" alt="Master" /></a>
         <a href="#"><img src="images/1311260374_visa-straight.png" alt="Visa" /></a> -->
                 <a href="#"><img src="images/bitpay-straight.png" alt="BitPay" /></a>
 
     </div>
-  <div class="footer_right">
+	<div class="footer_right">
 
         <!--
-    <p><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="checkout.html">Checkout</a> | <a href="contact.html">Contact</a></p> -->
+		<p><a href="index.html">Home</a> | <a href="products.html">Products</a> | <a href="about.html">About</a> | <a href="faqs.html">FAQs</a> | <a href="checkout.html">Checkout</a> | <a href="contact.html">Contact</a></p> -->
         <p>Copyright © 2017 <a href="#">Spice It Up</a></p>
 
-    
-  </div>
+		
+	</div>
     <div class="cleaner"></div>
 </div> <!-- END of footer -->
 </div> <!-- END of footer wrapper -->

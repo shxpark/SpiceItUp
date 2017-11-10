@@ -91,6 +91,7 @@ function clearText(field)
                 <li><a href="Login.php" class="selected">Log In</a></li>
                 <li><a href="Register.php">Register</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
+
               <!--  <li><a href="contact.html">Contact</a></li> -->
             </ul>
             <!--
@@ -120,8 +121,11 @@ function clearText(field)
       </div>
   </br>
 
-<button type="submit" name="submit" class="button">
-  <img src="images/log_in.png" />
+
+<input type="image" src="images/log_in.png" name="saveForm" class="btTxt submit" id="signin" />
+
+<!-- <button type="submit" name="submit" class="button">
+  <img src="images/log_in.png" /> SAM SAM--> 
 </button>
         <div>
       <!--  <input type="submit" value="Log in" /> -->

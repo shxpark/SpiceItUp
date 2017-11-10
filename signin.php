@@ -22,8 +22,10 @@ $dbPass = mysqli_query($link, "SELECT Name, PasswordHash FROM SpicyCustomers WHE
 
 $pass = false;
 $name = "";
+$login = false;
  while ($row=mysqli_fetch_row($dbPass))
     {
+    	$login = true;
 	    if (password_verify($password, $row[1])) {
 	    	$pass = true;
 	    	$name = $row[0];
@@ -34,6 +36,12 @@ $name = "";
 			setcookie("pass", "false");
 		}
     }
+if($login){
+
+}else{
+			setcookie("pass", "false");
+
+}
 
 mysqli_close($link);
 

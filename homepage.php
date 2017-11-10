@@ -81,6 +81,8 @@ function clearText(field)
                 <li><a href="contact.php">Contact Us</a></li>
               <li><a href="homepage.php" class="selected">Member Home Page</a></li>
              <li><a href="logout.php">Logout</a></li>
+
+
             </ul>
             <!--
             <div id="templatemo_search">
