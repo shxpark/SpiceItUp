@@ -13,9 +13,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 use PHPMailer\PHPMailer\Exception;
 
-require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/PHPMailer.php';
-require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/SMTP.php';
-require 'C:/xampp/htdocs/xamppfiles/phpmailer/src/Exception.php';
+require '/Applications/XAMPP/xamppfiles/htdocs/xamppfiles/phpmailer/src/PHPMailer.php';
+require '/Applications/XAMPP/xamppfiles/htdocs/xamppfiles/phpmailer/src/SMTP.php';
+require '/Applications/XAMPP/xamppfiles/htdocs/xamppfiles/phpmailer/src/Exception.php';
 
 $link = mysqli_connect("localhost", "root", "", "SpiceItUp");
 
@@ -159,7 +159,7 @@ function clearText(field)
                   </ul> --> 
                 </li>
                 <li><a href="checkout.html">Checkout</a></li>
-                <li><a href="Login.html">Log In</a></li>
+                <li><a href="Login.php">Log In</a></li>
                 <li><a href="Register.php">Register</a></li>
                 <li><a href="Contact.php">Contact Us</a></li>
             </ul>
